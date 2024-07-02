@@ -1,0 +1,55 @@
+-- Introdução
+
+Esse programa representa a implementação de uma multilista.
+
+O objetivo da aplicação são as buscas simples e composta por personagens de RPG com base em raça, classe e nível.
+
+Para raça, o personagem pode ser humano, elfo, anão, gnomo, orc, troll, tauren e morto-vivo.
+
+Em relação à classe, há guerreiro, mago, ladino, paladino e xamã.
+
+Por fim, o nível, por ser uma variável contínua, está classificado em grupos:
+
+ 1 a 15: novato;
+16 a 30: adepto;
+31 a 45: mestre;
+46 a 60: lendário.
+
+-- Funcionamento
+
+Foi utilizado multilista para implementar essa solução dado que ela possibilita buscas simples e compostas de forma bem otimizada com base em atributos secundários de uma entidade.
+
+Como estamos pesquisando personagens por suas características secundárias, e não seu nome, por exemplo, julgamos que faz sentido buscá-los utilizando a multilista.
+
+O projeto está organizado em um arquivo main.py que é a porta de entrada da aplicação. Além disso, a aplicação segue um padrão de design de MVC, separando a interação com o usuário na classe Interface (presente no arquivo interface.py), um controlador que implementa a lógica da aplicação na classe Multilista (presente no arquivo multilista.py) e uma entidade do personagem na classe de mesmo nome, Personagem (presente no arquivo personagem.py)
+
+As operações possíveis são: busca de personagens, onde é possível fazer busca simples e compostas, com base em passar um filtro ou não (toda opção de filtro pode ser preenchida com "não filtrar por nome_do_filtro"); inserir um novo personagem; remover um personagem pelo seu ID; mostrar todos os personagens; carregar dados e sair.
+
+Ademais, há um arquivo dados_carga.txt, que é o arquivo utilizado para a carga de cargos prontos, que é feita de forma consciente pelo usuário na lista de menus. É basicamente um arquivo csv com o esquema: nome, raça, classe, nível; sendo que o nível está em forma contínua - o tratamento dos grupos é feito no controlador -. Os dados só podem ser carregados um vez.
+
+Cada valor do esquema estará em um id correspondente a uma raça ou classe, então:
+
+Para raças:
+
+1: humano
+2: elfo
+3: anão 
+4: gnomo
+5: orc
+6: troll
+7: tauren
+8: morto-vivo
+
+Para classe:
+
+1: guerreiro
+2: mago
+3: ladino
+4: paladino
+5: xamã
+
+Ou seja, no dados_carga.txt, um humano guerreiro, nível 27 chamado Alric estará da seguinte forma:
+
+alric,1,1,27
+
+Por fim, há esse arquivo leiame.txt usado justamente para fazer a documentação do projeto.
