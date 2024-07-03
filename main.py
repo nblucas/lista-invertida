@@ -1,8 +1,8 @@
-from multilista import Multilista
+from lista_invertida import ListaInvertida
 
 def main():
-    multilista = Multilista()
-    multilista.executa_sistema()
+    lista_invertida = ListaInvertida()
+    lista_invertida.executa_sistema()
 
 if __name__ == "__main__":
     main()

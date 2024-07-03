@@ -1,7 +1,7 @@
 from personagem import Personagem
 from interface import Interface
 
-class Multilista:
+class ListaInvertida:
 
     def __init__(self):
         self.__personagens = list()

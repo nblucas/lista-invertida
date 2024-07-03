@@ -1,6 +1,6 @@
 -- Introdução
 
-Esse programa representa a implementação de uma multilista.
+Esse programa representa a implementação de uma lista invertida.
 
 O objetivo da aplicação são as buscas simples e composta por personagens de RPG com base em raça, classe e nível.
 
@@ -17,13 +17,15 @@ Por fim, o nível, por ser uma variável contínua, está classificado em grupos
 
 -- Funcionamento
 
-Foi utilizado multilista para implementar essa solução dado que ela possibilita buscas simples e compostas de forma bem otimizada com base em atributos secundários de uma entidade.
+Foi utilizado conceito de lista invertida para implementar essa solução dado que ela possibilita buscas simples e compostas de forma bem otimizada com base em atributos secundários de uma entidade.
 
-Como estamos pesquisando personagens por suas características secundárias, e não seu nome, por exemplo, julgamos que faz sentido buscá-los utilizando a multilista.
+Como estamos pesquisando personagens por suas características secundárias, e não seu nome, por exemplo, julgamos que faz sentido buscá-los utilizando a lista invertida.
 
-O projeto está organizado em um arquivo main.py que é a porta de entrada da aplicação. Além disso, a aplicação segue um padrão de design de MVC, separando a interação com o usuário na classe Interface (presente no arquivo interface.py), um controlador que implementa a lógica da aplicação na classe Multilista (presente no arquivo multilista.py) e uma entidade do personagem na classe de mesmo nome, Personagem (presente no arquivo personagem.py)
+Se utilizássemos uma multilista, provavelmente usaríamos menos memória principal, mas as buscas ficariam menos otimizadas, principalmente as compostas.
 
-As operações possíveis são: busca de personagens, onde é possível fazer busca simples e compostas, com base em passar um filtro ou não (toda opção de filtro pode ser preenchida com "não filtrar por nome_do_filtro"); inserir um novo personagem; remover um personagem pelo seu ID; mostrar todos os personagens; carregar dados e sair.
+O projeto está organizado em um arquivo main.py que é a porta de entrada da aplicação. Além disso, a aplicação segue um padrão de design de MVC, separando a interação com o usuário na classe Interface (presente no arquivo interface.py), um controlador que implementa a lógica da aplicação na classe ListaInvertida (presente no arquivo lista_invertida.py) e uma entidade do personagem na classe de mesmo nome, Personagem (presente no arquivo personagem.py)
+
+As operações são: busca de personagens, onde é possível fazer busca simples e compostas, com base em passar um filtro ou não (toda opção de filtro pode ser preenchida com "não filtrar por nome_do_filtro"); inserir um novo personagem; remover um personagem pelo seu ID; mostrar todos os personagens; carregar dados e sair.
 
 Ademais, há um arquivo dados_carga.txt, que é o arquivo utilizado para a carga de cargos prontos, que é feita de forma consciente pelo usuário na lista de menus. É basicamente um arquivo csv com o esquema: nome, raça, classe, nível; sendo que o nível está em forma contínua - o tratamento dos grupos é feito no controlador -. Os dados só podem ser carregados um vez.
 
